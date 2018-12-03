@@ -7,16 +7,14 @@ struct Point {
 	uint x, y;
 
 	struct Hash {
-	 std::size_t operator()(const Point& p) const
-	 {
-	      return p.x << 1 ^ p.y;
-	  }
+		std::size_t operator()(const Point& p) const {
+			return p.x << 1 ^ p.y;
+		}
 	};
 
 	bool operator==(const Point& p) const {
 		return x == p.x && y == p.y;
 	}
-
 };
 
 struct Rectangle {
@@ -82,7 +80,6 @@ uint getNotOverlappingClaim(const std::vector<Rectangle>& v, const std::unordere
 	assert(false);
 }
 
-
 int main() {
 	auto v = parseInput();
 
@@ -105,8 +102,6 @@ int main() {
 	std::cout << "good_fabric_area: " << double_filled_points.size() << std::endl;
 
 	std::cout << "not_overlapping_id: " << getNotOverlappingClaim(v, double_filled_points) << std::endl;
-
-
 
 	return 0;
 }
